@@ -3,10 +3,10 @@ import cors from 'cors';
 import pg from 'pg';
 
 const db = new pg.Client({
-    user: "postgres",
-    host: "localhost",
-    database: "perntodo",
-    password: "2020",
+    user: "todoapp_38in_user",
+    host: "dpg-d2acqe15pdvs73al1jh0-a",
+    database: "todoapp_38in",
+    password: "QZ6ghJjTjPbAp0LgypiZeRpeH55y30P2",
     port: 5432,
 });
 
@@ -14,7 +14,7 @@ db.connect();
 
 
 const app = express();
-const PORT = process.env.PORT || 3000;  
+const PORT = process.env.PORT || 100000;  
 
 
 //middleware
