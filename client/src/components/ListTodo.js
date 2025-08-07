@@ -6,7 +6,7 @@ function ListTodos() {
 
   const getTodos = async () => {
     try {
-      const response = await fetch("http://localhost:3000/todos");
+      const response = await fetch("https://todo-app-bfcu.onrender.com/todos");
       const jsonData = await response.json();
 
       setTodos(jsonData);
