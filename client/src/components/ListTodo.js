@@ -22,7 +22,7 @@ function ListTodos() {
   const deleteTodo = async (id)=>{
     try {
 
-        const deleteTodo = await fetch(`http://localhost:3000/todos/${id}`, {
+        const deleteTodo = await fetch(`https://todo-app-bfcu.onrender.com/todos/${id}`, {
             method: 'DELETE'
         })
 

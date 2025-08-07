@@ -10,7 +10,7 @@ function EditTodo({ todo }) {
       const body = { description };
 
       const response = await fetch(
-        `http://localhost:3000/todos/${todo.todo_id}`,
+        `https://todo-app-bfcu.onrender.com/todos/${todo.todo_id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

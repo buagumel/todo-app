@@ -9,7 +9,7 @@ function InputTodo() {
     try {
       const body = { description };
 
-      const response = await fetch("http://localhost:3000/todo", {
+      const response = await fetch("https://todo-app-bfcu.onrender.com/todo", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
