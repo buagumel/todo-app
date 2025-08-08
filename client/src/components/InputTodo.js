@@ -15,7 +15,7 @@ function InputTodo() {
         body: JSON.stringify(body),
       });
 
-      console.log(response)
+      
 
     window.location = "/";
     } catch (error) {
@@ -36,9 +36,9 @@ function InputTodo() {
             onChange={(event) => {
               setDescription(event.target.value);
             }}
-          />{" "}
+          />
           <button className="btn btn-success" >
-            {" "}
+            
             Add
           </button>
         </form>

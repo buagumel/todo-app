@@ -18,7 +18,10 @@ function EditTodo({ todo }) {
         }
       );
 
-      console.log(response);
+      console.log("Update response:", response);
+
+      // Refresh page or fetch todos again if needed
+      window.location = "/";
     } catch (error) {
       console.log(error.message);
     }
@@ -26,66 +29,65 @@ function EditTodo({ todo }) {
 
   return (
     <Fragment>
+      {/* Edit Button - Opens Modal */}
       <button
         type="button"
-        class="btn btn-warning"
+        className="btn btn-warning"
         data-bs-toggle="modal"
-        data-bs-target={`#${todo.todo_id}`}
+        data-bs-target={`#id${todo.todo_id}`}
+        onClick={() => setDescription(todo.description)}
       >
         Edit
       </button>
 
+      {/* Modal */}
       <div
-        class="modal fade"
-        id={`${todo.todo_id}`}
-        tabindex="-1"
+        className="modal fade"
+        id={`id${todo.todo_id}`}
+        tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
-                        onClick={()=>{setDescription(todo.description)}}
-
       >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Modal title
+        <div className="modal-dialog">
+          <div className="modal-content">
+            {/* Header */}
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="exampleModalLabel">
+                Edit Todo
               </h1>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
-                onClick={() => {
-                  setDescription(todo.description);
-                }}
+                onClick={() => setDescription(todo.description)}
               ></button>
             </div>
-            <div class="modal-body">
+
+            {/* Body */}
+            <div className="modal-body">
               <input
                 className="form-control"
                 value={description}
-                onChange={(e) => {
-                  setDescription(e.target.value);
-                }}
-              ></input>
+                onChange={(e) => setDescription(e.target.value)}
+              />
             </div>
-            <div class="modal-footer">
+
+            {/* Footer */}
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-danger"
+                className="btn btn-danger"
                 data-bs-dismiss="modal"
-                onClick={() => {
-                  setDescription(todo.description);
-                }}
+                onClick={() => setDescription(todo.description)}
               >
                 Close
               </button>
               <button
                 type="button"
-                class="btn btn-warning"
-                onClick={(e) => {
-                  updateDescription(e);
-                }}
+                className="btn btn-warning"
+                onClick={(e) => updateDescription(e)}
+                data-bs-dismiss="modal"
               >
                 Edit
               </button>
